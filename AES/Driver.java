@@ -13,13 +13,13 @@ import java.util.Scanner;
 public class Driver {
  static HashMap<Integer,String> roundKey = new HashMap<>();
     public static void main(String[] args) {
-        // takes the input from the user and stores in to the key
+    // takes the input from the user and stores in to the key
     Scanner input = new Scanner(System.in);
     String key = input.next();
     //checking the user input is in a 32digits hexadecimal format or not  
     if(key.matches("[0-9A-F]{32}")){
-       AESCipher aesCipher = new AESCipher();
-// storing 11 round keys in to roundKey HashMap    
+    AESCipher aesCipher = new AESCipher();
+    // storing 11 round keys in to roundKey HashMap    
     roundKey =aesCipher.aesRoundKey(key); 
     //printing the 11 round keys 
         for(int i=1;i<=roundKey.size();i++){
