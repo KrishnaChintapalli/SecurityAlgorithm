@@ -20,7 +20,7 @@ public class Driver {
     if(key.matches("[0-9A-F]{32}")){
        AESCipher aesCipher = new AESCipher();
 // storing 11 round keys in to roundKey HashMap    
-    roundKey =aesCihper.aesRoundKey(key); 
+    roundKey =aesCipher.aesRoundKey(key); 
     //printing the 11 round keys 
         for(int i=0;i<=roundKey.size();i++){
             System.out.println(roundKey.get(i));
