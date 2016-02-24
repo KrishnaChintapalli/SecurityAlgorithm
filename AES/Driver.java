@@ -22,7 +22,7 @@ public class Driver {
 // storing 11 round keys in to roundKey HashMap    
     roundKey =aesCipher.aesRoundKey(key); 
     //printing the 11 round keys 
-        for(int i=0;i<=roundKey.size();i++){
+        for(int i=1;i<=roundKey.size();i++){
             System.out.println(roundKey.get(i));
         }
     } 
