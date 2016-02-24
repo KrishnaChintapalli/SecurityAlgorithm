@@ -6,7 +6,7 @@
 
 import java.util.HashMap;
 
-public class AESChiper {
+public class AESCipher {
 
   static HashMap<Integer, Integer> sBox = new HashMap();
   static HashMap<Integer, String> roundkeys = new HashMap();
