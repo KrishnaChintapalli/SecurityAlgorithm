@@ -1,0 +1,43 @@
+9 pts
+
+Correctness:
+
+- The program produces incorrect output. The program produces a 'null' before
+  givin the keys. Example:
+$ java Driver < testcase.txt
+null
+5468617473206D79204B756E67204675
+E232FCF191129188B159E4E6D679A293
+...
+
+- The program produces output in the incorrect format. See above.
+
+
+Style:
+
+- There is incorrect indentation in the driver file
+
+- Good block comments
+
+- The header file in the aes class is incorrectly formatted. It should be like
+  this:
+/**
+ * file: SinglyLinkedList.java
+ * author: student name
+ * course: CMPT 220
+ * assignment: project 1
+ * due date: August 30, 2003
+ * version: 1.3
+ *
+ * This file contains the declaration of the SinglyLinkedList abstract data
+ * type.
+ */
+
+
+
+Efficiency and Other Comments:
+
+- The usage of HashMap may make your program less efficient.
+
+
+- Dr. Rivas
