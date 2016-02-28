@@ -39,5 +39,8 @@ Efficiency and Other Comments:
 
 - The usage of HashMap may make your program less efficient.
 
+- The driver.java file is incorrecly named as: Driver.java
+
+- The aescipher.java file is incorrectly named as: AESChiper.java 
 
 - Dr. Rivas
