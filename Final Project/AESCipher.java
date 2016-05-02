@@ -1,5 +1,3 @@
-
-
 /**
  * file: AESChiper.java author: SivaChintapalli course: MSCS_630L_231_16S
  * assignment: Lab 2 due date: March 31, 2016 version: 1.0 This file contains
