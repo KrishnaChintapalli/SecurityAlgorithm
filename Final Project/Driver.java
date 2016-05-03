@@ -1,4 +1,4 @@
-
+package AESALGORITHM_192;
 
 /**
  * file: Driver.java author: SivaChintapalli & Sourav Bhowmik course:
@@ -140,14 +140,14 @@ public class Driver {
                 //Printing the encrypted message
                 if (mode.equals("e")) {
                     System.out.println(encryptType + "-bit encrypted message is ");
-                for (String encryptMsgList1 : encryptMsgList) {
-                    System.out.print(encryptMsgList1);
-                }
+                    for (String encryptMsgList1 : encryptMsgList) {
+                        System.out.print(encryptMsgList1);
+                    }
                 }
                 //Printing the decrypted message
                 if (mode.equals("d")) {
                     System.out.println(encryptType + "-bit decrypted message is ");
-                removePadding();
+                    removePadding();
                 }
             }
         } else {
@@ -165,39 +165,48 @@ public class Driver {
         //paddingSize stores the characters required to be padded
         int paddingSize = 32 - message.length();
         for (int i = 0; i < paddingSize / 2; i++) {
-            if(paddingSize>9){
-                str = str.append(paddingSize / 2);
-            }else{
+            if (paddingSize > 9) {
+                str = str.append(paddingSize);
+            } else {
                 str = str.append("0").append(paddingSize / 2);
             }
         }
         return str.toString();
     }
+
     /*
     This method removes padding from the decrypted padded message 
-    */
-    public static void removePadding(){
-        
-         for (int k = 0; k < decryptMsgList.size(); k++) {
-                    if (k == decryptMsgList.size() - 1) {
-                        int count = 0;
-                        String PaddedMsg = decryptMsgList.get(k);
-                        String paddedVal = PaddedMsg.substring(30, 32);
-                        for (int i = 0; i < 16; i++) {
-                            String val = PaddedMsg.charAt(i * 2) + "" + PaddedMsg.charAt(i * 2 + 1);
-                            if (paddedVal.equals(val)) {
-                                count++;
-                            }
-                        }
-                        if (count == Integer.parseInt(paddedVal)) {
-                            PaddedMsg = PaddedMsg.replace(paddedVal, "");
-                        }
-                        System.out.print(PaddedMsg);
+     */
+    public static void removePadding() {
 
-                    } else {
-                        System.out.print(decryptMsgList.get(k));
+        for (int k = 0; k < decryptMsgList.size(); k++) {
+            if (decryptMsgList.size() > 1) {
+                if (k == decryptMsgList.size() - 1) {
+                    int count = 0;
+                    String PaddedMsg = decryptMsgList.get(k);
+                    String paddedVal = PaddedMsg.substring(30, 32);
+                    for (int i = 0; i < 16; i++) {
+                        String val = PaddedMsg.charAt(i * 2) + "" + PaddedMsg.charAt(i * 2 + 1);
+                        if (paddedVal.equals(val)) {
+                            count++;
+                        }
                     }
+                    if(count!=1){
+                    if (count == Integer.parseInt(paddedVal)) {
+                        PaddedMsg = PaddedMsg.replace(paddedVal, "");
+                    }
+                    System.out.print(PaddedMsg);
                 }
+                    else {
+                    System.out.print(decryptMsgList.get(k));
+                }
+                }else {
+                    System.out.print(decryptMsgList.get(k));
+                }
+            }else {
+                    System.out.print(decryptMsgList.get(k));
+                }
+        }
     }
-    
+
 }
